@@ -1,0 +1,93 @@
+/* Write your CSS here */
+
+.team-card-link {
+  width: 47%;
+  text-decoration: none;
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff33;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 80px;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 10px;
+}
+
+.team-card-img {
+  height: 42px;
+  width: 42px;
+  margin-right: 10px;
+}
+
+.team-card-name {
+  color: #ffffff;
+  font-family: 'Bree Serif';
+  font-size: 12px;
+  text-align: center;
+}
+
+
+@media screen and (min-width: 576px) {
+
+.team-card {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 10px;
+}
+
+.team-card-img {
+  height: 60px;
+  width: 60px;
+}
+
+.team-card-name {
+  font-size: 14px;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+
+.team-card {
+  height: 100px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 14px;
+}
+
+.team-card-img {
+  height: 80px;
+  width: 80px;
+}
+
+.team-card-name {
+  font-size: 16px;
+}
+
+}
+
+@media screen and (min-width: 992px) {
+
+.team-card {
+  height: 130px;
+  width: 100%;
+  margin-bottom: 28px;
+  padding: 16px;
+}
+
+.team-card-img {
+  height: 100px;
+  width: 100px;
+}
+
+.team-card-name {
+  font-size: 20px;
+}
+
+}

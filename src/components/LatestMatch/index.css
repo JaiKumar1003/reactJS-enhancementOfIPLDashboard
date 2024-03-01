@@ -1,0 +1,148 @@
+/* Write your CSS here */
+
+.team-latest-match-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.team-result-logo-card {
+  background-color: #0f172a;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: 0px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #475569;
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+.recent-team-result-card {
+  width: 60%;
+}
+
+.competing-team {
+  font-size: 18px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.venue {
+  font-size: 12px;
+}
+
+.result {
+  font-size: 12px;
+}
+
+.recent-match-logo {
+  height: 80px;
+  width: 80px;
+}
+
+.recent-match-innings-umpire-card {
+  background-color: #0f172a;
+  border: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-bottom: 30px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0px;
+}
+
+.recent-match-innings-umpire-card {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.recent-match-team-player-name {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .team-latest-match-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f172a;
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .team-result-logo-card {
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 26px;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    width: 64%;
+    margin: 0px;
+  }
+
+  .recent-team-result-card {
+    width: 60%;
+  }
+
+  .competing-team {
+    font-size: 24px;
+    margin-bottom: 44px;
+  }
+
+  .date {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .venue {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .result {
+    font-size: 16px;
+  }
+
+  .recent-match-logo {
+    height: 160px;
+    width: 160px;
+  }
+
+  .recent-match-innings-umpire-card {
+    background-color: transparent;
+    border: 0px;
+    padding-bottom: 30px;
+    padding-right: 26px;
+    align-items: flex-end;
+    width: 36%;
+    margin: 0px;
+    margin-bottom: 0px;
+  }
+
+  .recent-match-innings-umpire-card {
+    font-size: 16px;
+    margin-bottom: 0px;
+  }
+
+  .recent-match-team-player-name {
+    font-size: 14px;
+    margin-top: 0px;
+  }
+}

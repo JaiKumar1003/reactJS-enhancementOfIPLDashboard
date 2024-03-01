@@ -1,0 +1,128 @@
+/* Write your CSS here */
+
+.each-recent-card-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f172a;
+  border-radius: 10px;
+  width: 48%;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.recent-img {
+  height: 40px;
+  width: 40px;
+}
+
+.recent-team-name {
+  font-size: 18px;
+  text-align: center;
+  height: 60px;
+}
+
+.recent-team-result {
+  font-size: 12px;
+  text-align: center;
+  height: 60px;
+}
+
+.recent-team-status {
+  color: #18ed66;
+  font-size: 14px;
+  height: 20px;
+}
+
+.recent-style-status {
+  color: #e31a1a;
+  font-size: 14px;
+  height: 20px;
+}
+
+@media screen and (min-width: 576px) {
+  .recent-team-name {
+    font-size: 18px;
+    text-align: center;
+    height: 30px;
+  }
+
+  .recent-team-result {
+    font-size: 12px;
+    text-align: center;
+    height: 30px;
+  }
+
+  .recent-team-status {
+    color: #18ed66;
+    font-size: 14px;
+    height: 10px;
+  }
+
+  .recent-style-status {
+    color: #e31a1a;
+    font-size: 14px;
+    height: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .recent-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 26px;
+  }
+
+  .each-recent-card-bg {
+    width: 28%;
+    margin: 16px;
+  }
+
+  .recent-img {
+    height: 120px;
+    width: 120px;
+  }
+
+  .recent-team-name {
+    font-size: 26px;
+    text-align: center;
+    height: 50px;
+  }
+
+  .recent-team-result {
+    font-size: 16px;
+    text-align: center;
+    height: 50px;
+  }
+
+  .recent-team-status {
+    color: #18ed66;
+    font-size: 20px;
+    height: 20px;
+  }
+
+  .recent-style-status {
+    color: #e31a1a;
+    font-size: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .each-recent-card-bg {
+    width: 29%;
+    margin: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .each-recent-card-bg {
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 0px;
+    margin: 16px;
+  }
+}
