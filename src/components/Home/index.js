@@ -25,7 +25,7 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div>
+    <div data-testid="loader">
       <Loader type="Oval" color="#ffffff" height={50} width={50} />
     </div>
   )
@@ -46,11 +46,11 @@ class Home extends Component {
           {isLoading ? (
             this.renderLoader()
           ) : (
-            <div className="team-card-list">
+            <ul className="team-card-list">
               {teamCardList.map(eachTeam => (
                 <TeamCard eachTeam={eachTeam} key={eachTeam.id} />
               ))}
-            </div>
+            </ul>
           )}
         </div>
       </div>

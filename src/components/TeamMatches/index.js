@@ -2,6 +2,9 @@
 
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+
+import {PieChart, Pie, Sector, Cell, ResponsiveContainer} from 'recharts'
+
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
 import './index.css'
@@ -30,7 +33,7 @@ class TeamMatches extends Component {
   }
 
   renderLoader = () => (
-    <div>
+    <div data-testid="loader">
       <Loader type="Oval" color="#ffffff" height={50} width={50} />
     </div>
   )
@@ -53,6 +56,11 @@ class TeamMatches extends Component {
     return newRecentMatch
   }
 
+  onClickBackBtn = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
   render() {
     const {match} = this.props
     const {params} = match
@@ -60,10 +68,64 @@ class TeamMatches extends Component {
     const teamMatchBg = `team-match-${id.toLowerCase()}`
     const {teamMatchesObject, isLoading} = this.state
     const {latestMatchDetails, recentMatches, teamBannerUrl} = teamMatchesObject
+    console.log(recentMatches)
     const updatedRecentMatch =
       recentMatches !== undefined
         ? this.getRecentMatchesList(recentMatches)
         : []
+
+    let wonCount = 0
+    let lostCount = 0
+    let drawCount = 0
+
+    updatedRecentMatch.forEach(eachMatch => {
+      if (eachMatch.matchStatus === 'Won') {
+        wonCount += 1
+      } else if (eachMatch.matchStatus === 'Lost') {
+        lostCount += 1
+      } else {
+        drawCount += 1
+      }
+    })
+
+    const data = [
+      {name: 'Won', value: wonCount},
+      {name: 'Lost', value: lostCount},
+    ]
+
+    const COLORS = ['#41c95a', '#de2124']
+
+    if (drawCount !== 0) {
+      data.push({name: 'Drawn', value: drawCount})
+      COLORS.push('#27afbe')
+    }
+
+    const RADIAN = Math.PI / 180
+    const renderCustomizedLabel = ({
+      cx,
+      cy,
+      midAngle,
+      innerRadius,
+      outerRadius,
+      percent,
+      index,
+    }: any) => {
+      const radius = innerRadius + (outerRadius - innerRadius) * 0.5
+      const x = cx + radius * Math.cos(-midAngle * RADIAN)
+      const y = cy + radius * Math.sin(-midAngle * RADIAN)
+
+      return (
+        <text
+          x={x}
+          y={y}
+          fill="white"
+          textAnchor={x > cx ? 'start' : 'end'}
+          dominantBaseline="central"
+        >
+          {`${(percent * 100).toFixed(0)}%`}
+        </text>
+      )
+    }
 
     return (
       <div className={`team-match-container ${teamMatchBg}`}>
@@ -71,6 +133,13 @@ class TeamMatches extends Component {
           this.renderLoader()
         ) : (
           <div className="team-match-card">
+            <button
+              type="button"
+              className="back-button"
+              onClick={this.onClickBackBtn}
+            >
+              Back
+            </button>
             <img
               className="team-match-banner"
               src={teamBannerUrl}
@@ -85,6 +154,35 @@ class TeamMatches extends Component {
                 <MatchCard eachItem={eachItem} key={eachItem.id} />
               ))}
             </ul>
+            <div className="piechart-card">
+              <div className="piechart-heading-statistics-card">
+                <p className="piechart-heading">Pie Chart</p>
+                <ul className="piechart-statistics-list">
+                  <li className="statistics-item won-item">Won</li>
+                  <li className="statistics-item lost-item">Lost</li>
+                  <li className="statistics-item drawn-item">Drawn</li>
+                </ul>
+              </div>
+              <PieChart width={400} height={400}>
+                <Pie
+                  data={data}
+                  cx={200}
+                  cy={200}
+                  labelLine={false}
+                  label={renderCustomizedLabel}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {data.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+              </PieChart>
+            </div>
           </div>
         )}
       </div>

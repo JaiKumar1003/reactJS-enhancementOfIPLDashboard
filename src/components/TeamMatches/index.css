@@ -44,6 +44,21 @@
   padding: 0px;
 }
 
+.back-button {
+  background-color: #000000;
+  border: none;
+  border-radius: 4px;
+  width: 60px;
+  height: 40px;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
 @media screen and (min-width: 768px) {
   .recent-card {
     display: flex;
@@ -93,4 +108,60 @@
 .team-match-rcb {
   background-image: linear-gradient(to bottom, #d91c1f, #1e293b);
   background-size: cover;
+}
+
+.piechart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.piechart-heading-statistics-card {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.piechart-heading {
+  color: #ffffff;
+  font-family: 'Bree Serif';
+  font-size: 20px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.piechart-statistics-list {
+  padding: 0px;
+}
+.statistics-item {
+  font-family: 'Bree Serif';
+  font-size: 16px;
+  list-style-type: none;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 22px;
+}
+
+.statistics-item::before {
+  content: '';
+  height: 10px;
+  width: 10px;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.won-item::before {
+  background-color: #41c95a;
+}
+
+.lost-item::before {
+  background-color: #de2124;
+}
+
+.drawn-item::before {
+  background-color: #27afbe;
 }

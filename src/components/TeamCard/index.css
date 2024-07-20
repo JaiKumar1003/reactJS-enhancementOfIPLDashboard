@@ -1,7 +1,12 @@
 /* Write your CSS here */
 
-.team-card-link {
+.team-card-item {
   width: 47%;
+  list-style-type: none;
+}
+
+.team-card-link {
+  width: 100%;
   text-decoration: none;
 }
 
@@ -31,63 +36,56 @@
   text-align: center;
 }
 
-
 @media screen and (min-width: 576px) {
+  .team-card {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 10px;
+  }
 
-.team-card {
-  height: 100px;
-  width: 100%;
-  margin-bottom: 24px;
-  padding: 10px;
-}
+  .team-card-img {
+    height: 60px;
+    width: 60px;
+  }
 
-.team-card-img {
-  height: 60px;
-  width: 60px;
-}
-
-.team-card-name {
-  font-size: 14px;
-}
-
+  .team-card-name {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 768px) {
+  .team-card {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 14px;
+  }
 
-.team-card {
-  height: 100px;
-  width: 100%;
-  margin-bottom: 24px;
-  padding: 14px;
-}
+  .team-card-img {
+    height: 80px;
+    width: 80px;
+  }
 
-.team-card-img {
-  height: 80px;
-  width: 80px;
-}
-
-.team-card-name {
-  font-size: 16px;
-}
-
+  .team-card-name {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 992px) {
+  .team-card {
+    height: 130px;
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 16px;
+  }
 
-.team-card {
-  height: 130px;
-  width: 100%;
-  margin-bottom: 28px;
-  padding: 16px;
-}
+  .team-card-img {
+    height: 100px;
+    width: 100px;
+  }
 
-.team-card-img {
-  height: 100px;
-  width: 100px;
-}
-
-.team-card-name {
-  font-size: 20px;
-}
-
+  .team-card-name {
+    font-size: 20px;
+  }
 }
