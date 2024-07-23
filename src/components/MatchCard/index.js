@@ -8,7 +8,11 @@ const MatchCard = props => {
 
   return (
     <li className="each-recent-card-bg">
-      <img className="recent-img" src={competingTeamLogo} alt={competingTeam} />
+      <img
+        className="recent-img"
+        src={competingTeamLogo}
+        alt={`competing team ${competingTeam}`}
+      />
       <p className="recent-team-name">{competingTeam}</p>
       <p className="recent-team-result">{result}</p>
       {matchStatus === 'Won' ? (

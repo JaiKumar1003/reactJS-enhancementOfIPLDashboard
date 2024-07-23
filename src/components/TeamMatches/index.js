@@ -1,9 +1,7 @@
-// Write your code here
-
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 
-import {PieChart, Pie, Sector, Cell, ResponsiveContainer} from 'recharts'
+import {PieChart, Pie, Cell, Legend} from 'recharts'
 
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
@@ -108,8 +106,7 @@ class TeamMatches extends Component {
       innerRadius,
       outerRadius,
       percent,
-      index,
-    }: any) => {
+    }) => {
       const radius = innerRadius + (outerRadius - innerRadius) * 0.5
       const x = cx + radius * Math.cos(-midAngle * RADIAN)
       const y = cy + radius * Math.sin(-midAngle * RADIAN)
@@ -154,34 +151,34 @@ class TeamMatches extends Component {
                 <MatchCard eachItem={eachItem} key={eachItem.id} />
               ))}
             </ul>
-            <div className="piechart-card">
-              <div className="piechart-heading-statistics-card">
-                <p className="piechart-heading">Pie Chart</p>
-                <ul className="piechart-statistics-list">
-                  <li className="statistics-item won-item">Won</li>
-                  <li className="statistics-item lost-item">Lost</li>
-                  <li className="statistics-item drawn-item">Drawn</li>
-                </ul>
+            <div className="statistics-section">
+              <h2 className="statistics-heading">Statistics</h2>
+              <div className="piechart-card">
+                <PieChart width={400} height={400}>
+                  <Pie
+                    data={data}
+                    cx={200}
+                    cy={200}
+                    labelLine={false}
+                    label={renderCustomizedLabel}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="value"
+                  >
+                    {data.map((entry, index) => {
+                      const findIndex = data.indexOf(entry)
+
+                      return (
+                        <Cell
+                          key={`cell-${findIndex}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
+                      )
+                    })}
+                  </Pie>
+                  <Legend />
+                </PieChart>
               </div>
-              <PieChart width={400} height={400}>
-                <Pie
-                  data={data}
-                  cx={200}
-                  cy={200}
-                  labelLine={false}
-                  label={renderCustomizedLabel}
-                  outerRadius={80}
-                  fill="#8884d8"
-                  dataKey="value"
-                >
-                  {data.map((entry, index) => (
-                    <Cell
-                      key={`cell-${index}`}
-                      fill={COLORS[index % COLORS.length]}
-                    />
-                  ))}
-                </Pie>
-              </PieChart>
             </div>
           </div>
         )}
