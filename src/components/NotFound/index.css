@@ -9,10 +9,10 @@
   background-image: url('https://assets.ccbp.in/frontend/react-js/ipl-dashboard-sm-bg.png');
   background-size: cover;
   width: 100%;
-} 
+}
 
 .page-not-found {
   color: #ffffff;
-  font-family: "Bree Serif";
+  font-family: 'Bree Serif';
   font-size: 30px;
 }

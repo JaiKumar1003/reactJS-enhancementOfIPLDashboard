@@ -18,6 +18,7 @@
     "react-dom": "17.0.1",
     "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.2.0",
+    "react-scripts": "5.0.1",
     "recharts": "2.12.7"
   },
   "devDependencies": {
@@ -27,8 +28,7 @@
     "husky": "4.3.8",
     "lint-staged": "10.5.4",
     "npm-run-all": "4.1.5",
-    "prettier": "2.2.1",
-    "react-scripts": "4.0.3"
+    "prettier": "2.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
